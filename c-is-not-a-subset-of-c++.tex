@@ -470,7 +470,7 @@ In C, a character literal is a \texttt{char}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Keywords}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Implicit \texttt{int}}
  \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -548,6 +548,46 @@ test.c:4:1: warning: control reaches end of non-void function
 \vspace{-2cm}
 \begin{block}<3>{C++}
 Valid \texttt{C++}. Returns \texttt{0}. Only applies to \texttt{main()}.
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Keywords}
+ \begin{columns}
+\begin{column}{0.48\columnwidth}
+\begin{block}{Code}
+\begin{verbatim}
+  int class = 2;
+  int new = 3;
+  bool mutable = false;
+\end{verbatim}
+\end{block}
+\end{column}
+
+\begin{column}{0.48\columnwidth}
+\begin{block}{Questions}
+\begin{itemize}
+\item Valid C?
+\item Valid C++?
+\item Both?
+\item Neither!?
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\begin{block}<2>{C}
+All valid, and likely good names too.
+\end{block}
+
+\vspace{-1cm}
+\begin{block}<3>{C++}
+\begin{verbatim}
+test.cpp:8:5: error: expected primary-expression before ‘int’
+test.cpp:9:9: error: expected unqualified-id before ‘new’
+test.cpp:10:18: error: expected unqualified-id before ‘=’ token
+\end{verbatim}
 \end{block}
 \end{frame}
 
