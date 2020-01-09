@@ -49,6 +49,89 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Keywords}
+ \begin{columns}
+\begin{column}{0.48\columnwidth}
+\begin{block}{Code}
+\begin{verbatim}
+  int class = 2;
+  int new = 3;
+  bool mutable = false;
+\end{verbatim}
+\end{block}
+\end{column}
+
+\begin{column}{0.48\columnwidth}
+\begin{block}{Questions}
+\begin{itemize}
+\item Valid C?
+\item Valid C++?
+\item Both?
+\item Neither!?
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\begin{block}<2>{C}
+All valid, and likely good names too.
+\end{block}
+
+\vspace{-1cm}
+\begin{block}<3>{C++}
+\begin{verbatim}
+test.cpp:8:5: error: expected primary-expression before ‘int’
+test.cpp:9:9: error: expected unqualified-id before ‘new’
+test.cpp:10:18: error: expected unqualified-id before ‘=’ token
+\end{verbatim}
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile,label={sec:org1921130}]{Quiz — Data}
+ \begin{columns}
+\begin{column}{0.48\columnwidth}
+\begin{block}{Code}
+\begin{verbatim}
+struct FooBar {
+    int a;
+    int b;
+};
+/* ... */
+Foobar fb;
+\end{verbatim}
+\end{block}
+\end{column}
+
+\begin{column}{0.48\columnwidth}
+\begin{block}{Questions}
+\begin{itemize}
+\item Valid C?
+\item Valid C++?
+\item Both?
+\item Neither!?
+\end{itemize}
+
+\vspace{0.5cm}
+\end{block}
+\end{column}
+\end{columns}
+\begin{block}<2>{C}
+\begin{verbatim}
+test.c:9:5: error: unknown type name ‘FooBar’; use ‘struct’ keyword
+            to refer to the type
+\end{verbatim}
+
+\begin{verbatim}
+typedef struct FooBar { int a; int b; } FooBar;
+\end{verbatim}
+\end{block}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile,label={sec:orgb26de58}]{Quiz — \texttt{main()}}
  \begin{columns}
 \begin{column}{0.48\columnwidth}
@@ -93,17 +176,15 @@ test.cpp:1:10: warning: ISO C++ forbids declaration of ‘main’ with
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org1921130}]{Quiz — Data}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — \texttt{main()} — Part II}
  \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
 \begin{verbatim}
-struct FooBar {
-    int a;
-    int b;
-};
-/* ... */
-Foobar fb;
+int
+main(void)
+{
+}
 \end{verbatim}
 \end{block}
 \end{column}
@@ -116,20 +197,20 @@ Foobar fb;
 \item Both?
 \item Neither!?
 \end{itemize}
-
-\vspace{0.5cm}
 \end{block}
 \end{column}
 \end{columns}
-\begin{block}<2>{C}
-\begin{verbatim}
-test.c:9:5: error: unknown type name ‘FooBar’; use ‘struct’ keyword
-            to refer to the type
-\end{verbatim}
 
+\begin{block}<2>{C}
+Valid since \texttt{C99} (to match \texttt{C++} sadly). Before:
 \begin{verbatim}
-typedef struct FooBar { int a; int b; } FooBar;
+test.c:4:1: warning: control reaches end of non-void function
 \end{verbatim}
+\end{block}
+
+\vspace{-2cm}
+\begin{block}<3>{C++}
+Valid \texttt{C++}. Returns \texttt{0}. Only applies to \texttt{main()}.
 \end{block}
 \end{frame}
 
@@ -300,6 +381,10 @@ test.cpp:5:10: warning: variable length arrays are a C99
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
 \begin{verbatim}
+  typedef struct FooBar {
+      int a;
+      int b;
+  } FooBar;
   FooBar fb = { .b = 1,
                 .a = 2 };
 \end{verbatim}
@@ -464,13 +549,13 @@ In C, a character literal is an \texttt{int}.
 
 \vspace{-1cm}
 \begin{block}<3>{C++}
-In C, a character literal is a \texttt{char}.
+In C++, a character literal is a \texttt{char}.
 \end{block}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Implicit \texttt{int}}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Implicit Function Declaration}
  \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -478,6 +563,7 @@ In C, a character literal is a \texttt{char}.
 int
 main(void)
 {
+    /* No previous decl! */
     quux();
 }
 \end{verbatim}
@@ -513,95 +599,19 @@ test.cpp:4:5: error: ‘quux’ was not declared in this scope
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — \texttt{main()} — Part II}
- \begin{columns}
-\begin{column}{0.48\columnwidth}
-\begin{block}{Code}
-\begin{verbatim}
-int
-main(void)
-{
-}
-\end{verbatim}
-\end{block}
-\end{column}
-
-\begin{column}{0.48\columnwidth}
-\begin{block}{Questions}
-\begin{itemize}
-\item Valid C?
-\item Valid C++?
-\item Both?
-\item Neither!?
-\end{itemize}
-\end{block}
-\end{column}
-\end{columns}
-
-\begin{block}<2>{C}
-Valid since \texttt{C99} (to match \texttt{C++} sadly). Before:
-\begin{verbatim}
-test.c:4:1: warning: control reaches end of non-void function
-\end{verbatim}
-\end{block}
-
-\vspace{-2cm}
-\begin{block}<3>{C++}
-Valid \texttt{C++}. Returns \texttt{0}. Only applies to \texttt{main()}.
-\end{block}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Keywords}
- \begin{columns}
-\begin{column}{0.48\columnwidth}
-\begin{block}{Code}
-\begin{verbatim}
-  int class = 2;
-  int new = 3;
-  bool mutable = false;
-\end{verbatim}
-\end{block}
-\end{column}
-
-\begin{column}{0.48\columnwidth}
-\begin{block}{Questions}
-\begin{itemize}
-\item Valid C?
-\item Valid C++?
-\item Both?
-\item Neither!?
-\end{itemize}
-\end{block}
-\end{column}
-\end{columns}
-
-\begin{block}<2>{C}
-All valid, and likely good names too.
-\end{block}
-
-\vspace{-1cm}
-\begin{block}<3>{C++}
-\begin{verbatim}
-test.cpp:8:5: error: expected primary-expression before ‘int’
-test.cpp:9:9: error: expected unqualified-id before ‘new’
-test.cpp:10:18: error: expected unqualified-id before ‘=’ token
-\end{verbatim}
-\end{block}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}[fragile,label={sec:org23c6824}]{Closing Thoughts}
   \begin{itemize}
   \item These are not all differences!
   \item Almost everything is language version dependent.
   \item Almost everything is toolchain dependent.
-  \item Idiomatic C is not idiomatic C++
-  \item …and visa-versa.
-  \item Interfaces are the solution.
-  \item Compiling C with a C++ compiler is not.
+  \item Idiomatic \texttt{C} is not idiomatic \texttt{C++}.
+  \item Idiomatic \texttt{C++} is probably not valid \texttt{C}.
+  \item Interfaces are the solution for interoperation.
+    \begin{itemize}
+    \item Using \texttt{C} from \texttt{C++} is very easy.
+    \item Using \texttt{C++} from \texttt{C} is probably not.
+    \end{itemize}
+  \item Compiling \texttt{C} with a \texttt{C++} compiler is not.
   \end{itemize}
 \end{frame}
 
