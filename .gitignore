@@ -1,0 +1,12 @@
+.*
+!.gitignore
+*~
+\#*
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+graphics/*.pdf
