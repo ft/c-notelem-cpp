@@ -49,8 +49,43 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
+\begin{columns}
+\begin{column}{0.68\columnwidth}
+\begin{block}{Code}
+\begin{verbatim}
+  %:include <stdio.h>
+  %:include <stdlib.h>
+  int main(int argc, const char *argv<::>) <%
+      while (argc-- > 1) <%
+          printf("%s\n", argv<:argc:>);
+      %>
+      return EXIT_SUCCESS;
+  %>
+\end{verbatim}
+\end{block}
+\end{column}
+
+\begin{column}{0.38\columnwidth}
+\begin{block}{Questions}
+\begin{itemize}
+\item Valid C?
+\item Valid C++?
+\item Both?
+\item Neither!?
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\begin{block}<2>{Valid C and C++! — Digraphs and Trigraphs.}
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Keywords}
- \begin{columns}
+\begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
 \begin{verbatim}
@@ -594,41 +629,6 @@ Should be an error since \texttt{C99}: \texttt{ -Werror-implicit-function-declar
 \begin{verbatim}
 test.cpp:4:5: error: ‘quux’ was not declared in this scope
 \end{verbatim}
-\end{block}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Huh?}
- \begin{columns}
-\begin{column}{0.68\columnwidth}
-\begin{block}{Code}
-\begin{verbatim}
-  %:include <stdio.h>
-  %:include <stdlib.h>
-  int main(int argc, const char *argv<::>) <%
-      while (argc-- > 1) <%
-          printf("%s\n", argv<:argc:>);
-      %>
-      return EXIT_SUCCESS;
-  %>
-\end{verbatim}
-\end{block}
-\end{column}
-
-\begin{column}{0.38\columnwidth}
-\begin{block}{Questions}
-\begin{itemize}
-\item Valid C?
-\item Valid C++?
-\item Both?
-\item Neither!?
-\end{itemize}
-\end{block}
-\end{column}
-\end{columns}
-
-\begin{block}<2>{Valid C and C++! — Digraphs.}
 \end{block}
 \end{frame}
 
