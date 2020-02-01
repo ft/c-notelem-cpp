@@ -47,7 +47,7 @@
 \section{In Reality: C \(\not\subset\) C++}
 \label{sec:orgf0e5bbb}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%Di/Trigraphs%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
@@ -82,9 +82,9 @@
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%Keywords%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Keywords}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -159,9 +159,9 @@ Valid C++.
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%Datatypes%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org1921130}]{Quiz — Data}
+\begin{frame}[fragile,label={sec:org1921130}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -202,9 +202,9 @@ typedef struct FooBar { int a; int b; } FooBar;
 \end{frame}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%main()%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:orgb26de58}]{Quiz — \texttt{main()}}
+\begin{frame}[fragile,label={sec:orgb26de58}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -246,9 +246,9 @@ test.cpp:1:10: warning: ISO C++ forbids declaration of ‘main’ with
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%main()-part-2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — \texttt{main()}, Part II}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -286,9 +286,9 @@ Valid \texttt{C++}. Returns \texttt{0}. Only applies to \texttt{main()}.
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%auto%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — \texttt{auto}}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -325,9 +325,9 @@ From \texttt{C++11} \texttt{x} will be a \texttt{double} via type inference.
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%auto-part-2%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — \texttt{auto}, Part II}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -366,9 +366,9 @@ test.cpp:4:5: warning: 'auto' storage class specifier is not permit-
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%register%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — \texttt{register}}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -404,15 +404,17 @@ test.cpp:4:5: error: ISO C++17 does not allow 'register' storage
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%VLA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — VLA}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
 \begin{verbatim}
-  int x = 8;
-  int a[x];
+  void foo(void) {
+    int x = 8;
+    int a[x];
+    /* ... */
 \end{verbatim}
 \end{block}
 \end{column}
@@ -446,9 +448,9 @@ test.cpp:5:10: warning: variable length arrays are a C99
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%initialisation%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Initialisation}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -488,9 +490,9 @@ test.cpp:6:41: error: designator order for field ‘FooBar::a’ does
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%c99-features%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Newer C Features — \texttt{C99}}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -521,9 +523,9 @@ test.cpp:5:5: error: ‘_Bool’ was not declared in this scope
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%c11-features%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Newer C Features — \texttt{C11}}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -558,9 +560,9 @@ test.cpp:8:5: warning: generic selections are a C11-specific
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%void-conversion%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — \texttt{void} Conversion}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -591,9 +593,9 @@ test.cpp:6:21: error: invalid conversion from ‘void*’ to ‘int*’
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%character-literals%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Character Literals}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
@@ -625,9 +627,9 @@ In C++, a character literal is a \texttt{char}.
 \end{block}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%implicit-function-declaration%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile,label={sec:org23c4234}]{Quiz — Implicit Function Declaration}
+\begin{frame}[fragile,label={sec:org23c4234}]{Quiz}
 \begin{columns}
 \begin{column}{0.48\columnwidth}
 \begin{block}{Code}
