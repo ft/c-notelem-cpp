@@ -5,7 +5,7 @@ LATEX = pdflatex
 INKSCAPE = inkscape
 SVG2PDF = $(INKSCAPE) --export-pdf
 
-GRAPHICS_SVG = ./graphics/csubset.svg
+GRAPHICS_SVG = ./graphics/csubset.svg ./graphics/creality.svg
 GRAPHICS_PDF = ${GRAPHICS_SVG:.svg=.pdf}
 
 .SUFFIXES: .svg .pdf
