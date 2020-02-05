@@ -1,0 +1,14 @@
+C ⊄ C++ — C is not a subset of C++
+
+This repository contains a couple of slides, used in a workplace lightning
+talk, to illustrate  some of the differences between C  and C++. This talk
+was sparked by me stumbling across (even recent) blog posts that would ar-
+gue the opposite (i.e. C ⊂ C++).
+
+This is not an exhaustive list  of differences. And the differences really
+do depend on  the different versions of language standards  you'd look at,
+as well as the actual implementations (read: toolchains) in use.
+
+These slides are covered by Creative Commons BY-SA 4.0¹.
+
+¹ https://creativecommons.org/licenses/by-sa/4.0/
